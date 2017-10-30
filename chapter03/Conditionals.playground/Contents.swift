@@ -11,6 +11,9 @@ if population < 10000 {
 } else {
     message = "\(population) is pretty big!"
 }
+//message = population < 10000 ? "\(population) is a small town!!" :
+//    "\(population) is pretty big!"
+
 print(message)
 
 if !hasPostOffice {
