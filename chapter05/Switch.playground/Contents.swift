@@ -2,7 +2,8 @@
 
 import Cocoa
 
-var statusCode: Int = 404;
+//var statusCode: Int = 404
+var statusCode: Int = 203
 
 //var errorString: String
 var errorString: String = "The request failed with the error."
@@ -43,7 +44,12 @@ switch statusCode {
 //        errorString += " Server error, 5xx."
         errorString += " Server error, \(statusCode)."
     
+    case let unknownCode where (unknownCode >= 200 && unknownCode < 300) || unknownCode > 505:
+        errorString = "\(unknownCode) is not a known error code."
+    
     default:
-        errorString += "Unknown. Please review the request and try again."
+//        errorString += "Unknown. Please review the request and try again."
+        errorString += "\(statusCode) is not a known error code."
+    
 }
 print(errorString)
