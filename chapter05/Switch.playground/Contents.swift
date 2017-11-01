@@ -3,7 +3,8 @@
 import Cocoa
 
 //var statusCode: Int = 404
-var statusCode: Int = 203
+//var statusCode: Int = 203
+var statusCode: Int = 418
 
 //var errorString: String
 var errorString: String = "The request failed with the error."
@@ -53,3 +54,10 @@ switch statusCode {
     
 }
 print(errorString)
+
+let error = (statusCode, errorString)
+error.0
+error.1
+let error2 = (code: statusCode, error: errorString)
+error2.code
+error2.error
