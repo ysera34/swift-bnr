@@ -61,3 +61,18 @@ error.1
 let error2 = (code: statusCode, error: errorString)
 error2.code
 error2.error
+
+
+let firstErrorCode = 404
+let secondErrorCode = 200
+let errorCodes = (firstErrorCode, secondErrorCode)
+switch errorCodes {
+    case (404, 404):
+        print("No items found.")
+    case (404, _):
+        print("First item not found.")
+    case (_, 404):
+        print("Second item not found.")
+    default:
+        print("All items found.")
+}
