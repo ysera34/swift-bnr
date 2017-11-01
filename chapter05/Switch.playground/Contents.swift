@@ -76,3 +76,20 @@ switch errorCodes {
     default:
         print("All items found.")
 }
+
+
+let age = 25
+switch age {
+    case 18...35:
+        print("Cool demographic")
+    default:
+        break
+}
+
+if case 18...35 = age {
+    print("Cool demographic")
+}
+
+if case 18...35 = age, age >= 21 {
+    print("In cool demographic and of drinking age")
+}
