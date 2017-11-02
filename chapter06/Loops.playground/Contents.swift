@@ -22,3 +22,23 @@ for i in 1...100 {
         print(i)
     }
 }
+
+
+var i = 1
+while i < 6 {
+    myFirstInt += 1
+    print(myFirstInt)
+    i += 1
+}
+
+/*
+while shields > 0 {
+    // fire!!
+    print("Fire blasters!")
+}
+
+repeat {
+    // fire!!
+    print("Fire blasters!")
+} while shields > 0
+*/
