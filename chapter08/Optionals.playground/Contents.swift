@@ -43,3 +43,15 @@ var errorCodeString2: String! = nil
 //let anotherErrorCodeString: String = errorCodeString2
 let yetAnotherErrorCodeString = errorCodeString2
 print("yetAnotherErrorCodeString : \(yetAnotherErrorCodeString)")
+
+// optional chaining
+var errorCodeString3: String?
+errorCodeString3 = "404"
+var errorDescription: String?
+if let theError = errorCodeString3, let errorCodeInteger = Int(theError),
+    errorCodeInteger == 404 {
+    errorDescription = "\(errorCodeInteger + 200) : resource was not found."
+}
+
+var upCaseErrorDescription = errorDescription?.uppercased()
+errorDescription
