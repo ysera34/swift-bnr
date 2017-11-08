@@ -2,24 +2,33 @@
 
 import Cocoa
 
+// optional type
 var errorCodeString: String?
+print("errorString : \(errorCodeString)")
 errorCodeString = "404"
-// print("errorString : \(errorCodeString)")
+print("errorString : \(errorCodeString)")
+
 if errorCodeString != nil {
-    let theError = errorCodeString!
-    print("theError : \(theError)")
+    let theError1 = errorCodeString
+    print("theError1 : \(theError1)")
+    let theError2 = errorCodeString!
+    print("theError2 : \(theError2)")
 }
 
-
-//if let temporaryConstant = anOptional {
-    // temporaryContent do something
-//} else {
-    // anOptional is nil
-//}
-
+// optional binding
 if let theError = errorCodeString {
-//    print(theError)
+    print("theError : \(theError)")
     if let errorCodeInteger = Int(theError) {
         print("\(theError): \(errorCodeInteger)")
     }
+}
+
+if let theError = errorCodeString {
+    if let errorCodeInteger = Int(theError) {
+        print("\(theError): \(errorCodeInteger)")
+    }
+}
+
+if let theError = errorCodeString, let errorCodeInteger = Int(theError) {
+    print("\(theError): \(errorCodeInteger)")
 }
