@@ -10,3 +10,16 @@ if errorCodeString != nil {
     print("theError : \(theError)")
 }
 
+
+//if let temporaryConstant = anOptional {
+    // temporaryContent do something
+//} else {
+    // anOptional is nil
+//}
+
+if let theError = errorCodeString {
+//    print(theError)
+    if let errorCodeInteger = Int(theError) {
+        print("\(theError): \(errorCodeInteger)")
+    }
+}
