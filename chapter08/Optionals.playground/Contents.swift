@@ -53,8 +53,18 @@ if let theError = errorCodeString3, let errorCodeInteger = Int(theError),
     errorDescription = "\(errorCodeInteger + 200) : resource was not found."
 }
 
+// optional in place
 var upCaseErrorDescription = errorDescription?.uppercased()
 errorDescription
 upCaseErrorDescription?.append(" PLEASE TRY AGAIN.")
 upCaseErrorDescription
 
+// nil coalescing operator
+let description: String
+errorDescription = nil
+if let errorDescription = errorDescription {
+    description = errorDescription
+} else {
+    description = "No error"
+}
+let description1 = errorDescription ?? "No error"
