@@ -32,3 +32,14 @@ if let theError = errorCodeString {
 if let theError = errorCodeString, let errorCodeInteger = Int(theError) {
     print("\(theError): \(errorCodeInteger)")
 }
+
+// implicitly unwrapped optional
+var errorCodeString1: String!
+print("errorCodeString1 : \(errorCodeString1)")
+errorCodeString1 = "404"
+print("errorCodeString1 : \(errorCodeString1)")
+
+var errorCodeString2: String! = nil
+//let anotherErrorCodeString: String = errorCodeString2
+let yetAnotherErrorCodeString = errorCodeString2
+print("yetAnotherErrorCodeString : \(yetAnotherErrorCodeString)")
