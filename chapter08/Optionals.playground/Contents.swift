@@ -55,3 +55,6 @@ if let theError = errorCodeString3, let errorCodeInteger = Int(theError),
 
 var upCaseErrorDescription = errorDescription?.uppercased()
 errorDescription
+upCaseErrorDescription?.append(" PLEASE TRY AGAIN.")
+upCaseErrorDescription
+
