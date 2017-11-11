@@ -43,3 +43,23 @@ print(bucketList2[0])
 // insert value in specific index
 bucketList2.insert("Toboggan across Alaska", at:2)
 
+var myronsList = [
+    "Climb Mt. Kilimanjaro",
+    "Fly hot air balloon to Fiji",
+    "Toboggan across Alaska",
+    "Go on a walkabout in Australia",
+    "Find a triple rainbow",
+    "Scuba dive in the Great Blue Hole",
+]
+
+let equal = (bucketList2 == myronsList)
+
+
+// immutable array
+let lunches = [
+    "cheeseburger",
+    "Veggie Pizza",
+    "Chicken Caesar Salad",
+    "Black Bean Burrito",
+    "Falafel Wrap"
+]
