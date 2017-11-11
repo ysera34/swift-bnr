@@ -33,3 +33,27 @@ movieRatings["The Cabinet of Dr. Caligari"] = 5
 //movieRatings.removeValue(forKey: "Dark City")
 //let removedRating: Int? = movieRatings.removeValue(forKey: "Dark City")
 movieRatings["Dark City"] = nil // cannot return optional
+
+
+// apply for in roop
+for (key, value) in movieRatings {
+    print("The movie \(key) was rated \(value).")
+}
+for movie in movieRatings.keys {
+    print("User has rated \(movie).")
+}
+
+// immutable dictionary
+let album = [
+    "Diet Roast Beef": 268,
+    "Dubba Dubbs Stubs His Toe": 467,
+    "Smokey's Carpet Cleaning Service": 187,
+    "Track 4": 221
+]
+
+// from Dictionary to Array
+movieRatings
+let watchedMovies = Array(movieRatings.keys)
+let watchedMovies1 = Array(movieRatings.keys)
+let watchedMovies2 = Array(movieRatings.keys)
+// What happens to the index?
