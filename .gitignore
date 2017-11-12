@@ -100,6 +100,7 @@ fastlane/test_output
 # custom
 .DS_Store
 Reference
+Test
 
 ### Xcode Patch ###
 *.xcodeproj/*
