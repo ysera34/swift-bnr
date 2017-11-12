@@ -35,7 +35,7 @@ movieRatings["The Cabinet of Dr. Caligari"] = 5
 movieRatings["Dark City"] = nil // cannot return optional
 
 
-// apply for in roop
+// apply for in loop
 for (key, value) in movieRatings {
     print("The movie \(key) was rated \(value).")
 }
