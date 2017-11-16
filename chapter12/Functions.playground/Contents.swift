@@ -119,3 +119,10 @@ func greetByMiddleName(fromFullName name: (first: String, middle: String?, last:
 }
 greetByMiddleName(fromFullName: (first: "Matt", middle: "Danger", last: "Mathias"))
 greetByMiddleName(fromFullName: ("Matt", nil, "Mathias"))
+
+// type of function
+let evenOddFunction: ([Int]) -> ([Int], [Int]) = sortedEvenOddNumbers
+let evenOddFunction1: ([Int]) -> ([Int], [Int]) = sortedEvenOddNumbers(_:)
+print(evenOddFunction1)
+print(evenOddFunction1(aBunchOfNumbers))
+
