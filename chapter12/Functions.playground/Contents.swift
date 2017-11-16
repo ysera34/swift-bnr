@@ -69,3 +69,15 @@ func divisionDescriptionFor2(numerator: Double,
     return"\(numerator) divided by \(denonimator) equals \(numerator / denonimator)\(punctuation)"
 }
 print(divisionDescriptionFor2(numerator: 9.0, denonimator: 3.0, withPunctuation: "!"))
+
+// overlap function, enclosing scope
+// let num: Double = 2
+func areaOfTriangleWith(base: Double, height: Double) -> Double {
+    let numerator = base * height // * num
+    func divide() -> Double {
+        return numerator / 2
+    }
+    return divide()
+}
+areaOfTriangleWith(base: 3.0, height: 5.0)
+// divide()
