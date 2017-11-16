@@ -125,4 +125,6 @@ let evenOddFunction: ([Int]) -> ([Int], [Int]) = sortedEvenOddNumbers
 let evenOddFunction1: ([Int]) -> ([Int], [Int]) = sortedEvenOddNumbers(_:)
 print(evenOddFunction1)
 print(evenOddFunction1(aBunchOfNumbers))
-
+let evenOddFunction2: ([Int]) -> ([Int], [Int]) = sortedEvenOddNumbers(_:)
+print(evenOddFunction2(aBunchOfNumbers).0)
+print(evenOddFunction2(aBunchOfNumbers).1)
