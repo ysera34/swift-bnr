@@ -129,3 +129,16 @@ var pointShape = ShapeDimensions.point
 print("square's area = \(squareShape.area())")
 print("rectangle's area = \(rectangleShape.area())")
 print("point's area = \(pointShape.area())")
+
+
+// Recursive
+enum FamilyTree {
+    case noKnowParents
+    indirect case oneKnownParent(name: String, ancestors: FamilyTree)
+    indirect case twoKnownParents(fatherName: String, fatherAncestors: FamilyTree,
+                        motherName: String, motherAncestors: FamilyTree)
+}
+let fredAncestors = FamilyTree.twoKnownParents(
+    fatherName: "Fred Sr.",
+    fatherAncestors: .oneKnownParent(name: "Beth", ancestors: .noKnowParents),
+    motherName: "Marsha", motherAncestors: .noKnowParents)
