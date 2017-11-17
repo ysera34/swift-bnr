@@ -85,3 +85,27 @@ var bigCityPopulation = 4_061_981
 let bigCityGrowBy = makePopulationTracker(forInitialPopulation: bigCityPopulation)
 bigCityPopulation = bigCityGrowBy(10_000)
 currentPopulation
+
+
+// functional programming
+// map(_:)
+let precinctPopulations = [1244, 2021, 2157]
+let projectedPopulations = precinctPopulations.map {
+    (population: Int) -> Int in
+    return population * 2
+}
+projectedPopulations
+
+// filter(_:)
+let bigProjections = projectedPopulations.filter {
+    (projection: Int) -> Bool in
+    return projection > 4000
+}
+bigProjections
+
+// reduce(_:_:)
+let totalProjection = projectedPopulations.reduce(0) {
+    (accumulatedProjection: Int, precinctProjection: Int) -> Int in
+    return accumulatedProjection + precinctProjection
+}
+totalProjection
