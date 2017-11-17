@@ -75,3 +75,13 @@ growBy(500)
 growBy(500)
 growBy(500)
 currentPopulation = growBy(500)
+
+
+// Closure is reference type
+let anotherGrowBy = growBy
+anotherGrowBy(500)
+
+var bigCityPopulation = 4_061_981
+let bigCityGrowBy = makePopulationTracker(forInitialPopulation: bigCityPopulation)
+bigCityPopulation = bigCityGrowBy(10_000)
+currentPopulation
