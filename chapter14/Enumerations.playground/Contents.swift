@@ -41,7 +41,7 @@ enum TextAlignment2: Int {
     case right = 20
     case center
 }
-var alignment3 = TextAlignment1.left
+var alignment3 = TextAlignment2.left
 print("Left has raw value \(TextAlignment2.left.rawValue)")
 print("Right has raw value \(TextAlignment2.right.rawValue)")
 print("Center has raw value \(TextAlignment2.center.rawValue)")
@@ -102,3 +102,30 @@ print("the bulb's temperature is \(bulbTemperature)")
 bulb.toggle()
 bulbTemperature = bulb.surfaceTemperature(forAmbientTemperature: ambientTemperature)
 print("the bulb's temperature is \(bulbTemperature)")
+
+
+// Associate data with enumerated instance
+enum ShapeDimensions {
+    case point
+    case square(side: Double)
+    case rectangle(width: Double, height: Double)
+    
+    func area() -> Double {
+        switch self {
+        case .point:
+            return 0
+        case let .square(side: side):
+            return side * side
+        case let .rectangle(width: w, height: h):
+            return w * h
+        }
+    }
+}
+
+var squareShape = ShapeDimensions.square(side: 10.0)
+var rectangleShape = ShapeDimensions.rectangle(width: 5.0, height: 10.0)
+var pointShape = ShapeDimensions.point
+
+print("square's area = \(squareShape.area())")
+print("rectangle's area = \(rectangleShape.area())")
+print("point's area = \(pointShape.area())")
