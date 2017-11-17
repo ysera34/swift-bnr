@@ -33,3 +33,26 @@ var stoplights = 4
 let townPlanByAddingLightsToExistingLights = makeTownGuand()
 stoplights = townPlanByAddingLightsToExistingLights(4, stoplights)
 print("Knowhere has \(stoplights) stoplights.")
+
+
+// A function that acts as a argument type.
+func makeTownGuand1(withBudget budget: Int, condition: (Int) -> Bool) -> ((Int, Int) -> Int)? {
+    if condition(budget) {
+        func buildRoads(byAddingLights lights: Int, toExistingLights existingLights: Int) -> Int {
+            return lights + existingLights
+        }
+        return buildRoads
+    } else {
+        return nil
+    }
+}
+func evaluate(budget: Int) -> Bool {
+    return budget > 10_000
+}
+if let townPlanByAddingLightsToExistingLights = makeTownGuand1(withBudget: 1_000, condition: evaluate) {
+    stoplights = townPlanByAddingLightsToExistingLights(4, stoplights)
+}
+if let newTownPlanByAddingLightsToExistingLights = makeTownGuand1(withBudget: 10_500, condition: evaluate) {
+    stoplights = newTownPlanByAddingLightsToExistingLights(4, stoplights)
+}
+print("Knowhere has \(stoplights) stoplights.")
