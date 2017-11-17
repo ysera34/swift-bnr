@@ -20,3 +20,16 @@ let volenteersSorted4 = volunteerCounts.sorted(by: {$0 < $1})
 volenteersSorted4
 let volenteersSorted5 = volunteerCounts.sorted{$0 < $1}
 volenteersSorted5
+
+
+// A function that acts as a return type.
+func makeTownGuand() -> (Int, Int) -> Int {
+    func buildRoads(byAddingLights lights: Int, toExistingLights existingLights: Int) -> Int {
+        return lights + existingLights
+    }
+    return buildRoads
+}
+var stoplights = 4
+let townPlanByAddingLightsToExistingLights = makeTownGuand()
+stoplights = townPlanByAddingLightsToExistingLights(4, stoplights)
+print("Knowhere has \(stoplights) stoplights.")
