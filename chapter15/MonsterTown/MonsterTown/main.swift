@@ -8,5 +8,7 @@
 
 import Foundation
 
-print("Hello, World!")
-
+var myTown = Town()
+myTown.printDescription()
+myTown.changePopulation(by: 500)
+myTown.printDescription()
