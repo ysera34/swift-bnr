@@ -12,3 +12,7 @@ var myTown = Town()
 myTown.printDescription()
 myTown.changePopulation(by: 500)
 myTown.printDescription()
+
+let genericMonster = Monster()
+genericMonster.town = myTown
+genericMonster.terrorizeTown()
