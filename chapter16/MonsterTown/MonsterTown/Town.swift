@@ -9,8 +9,26 @@
 import Foundation
 
 struct Town {
+    let region = "South"
     var population = 19
     var numberOfStoplights = 4
+    
+    enum Size {
+        case small
+        case medium
+        case large
+    }
+    lazy var townSize: Size = {
+        print("townSize lazy computing...")
+        switch self.population {
+        case 0...10_000:
+            return Size.small
+        case 10_001...100_000:
+            return Size.medium
+        default:
+            return Size.large
+        }
+    }()
     
     static func numberOfTrees() -> Int {
         return 5

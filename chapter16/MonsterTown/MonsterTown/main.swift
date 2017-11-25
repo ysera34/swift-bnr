@@ -22,14 +22,19 @@ var myTown = Town()
 //fredTheZombie.terrorizeTown()
 //fredTheZombie.town?.printDescription()
 
-let taskVampire = Vampire()
-taskVampire.town = myTown
-taskVampire.terrorizeTown()
-taskVampire.town?.printDescription()
+//let taskVampire = Vampire()
+//taskVampire.town = myTown
+//taskVampire.terrorizeTown()
+//taskVampire.town?.printDescription()
 
-let trees = Town.numberOfTrees()
-print(trees)
-let spookyNoise = Zombie.makeSpookyNoise()
-print(spookyNoise)
-let giantZombieSpookyNoise = GiantZombie.makeSpookyNoise()
-print(giantZombieSpookyNoise)
+//let trees = Town.numberOfTrees()
+//print(trees)
+//let spookyNoise = Zombie.makeSpookyNoise()
+//print(spookyNoise)
+//let giantZombieSpookyNoise = GiantZombie.makeSpookyNoise()
+//print(giantZombieSpookyNoise)
+
+let myTownSize = myTown.townSize
+print(myTownSize)
+myTown.changePopulation(by: 1_000_000)
+print("Size: \(myTown.townSize); population: \(myTown.population)")
