@@ -12,29 +12,17 @@ class Zombie: Monster {
     var walksWithLimp = true
 //    do not work
 //    var name = "Zombie"
-    override var name: String {
-        get {
-            return "Zombie"
-        }
-        set {
-            
-        }
-    }
-    
-    override class var spookyNoise: String {
-        return "Brains..."
-    }
+//    override var name: String {
+//        get {
+//            return "Zombie"
+//        }
+//        set {
+//            
+//        }
+//    }
     
     class func makeSpookyNoise() -> String {
         return "Brains..."
-    }
-    
-    static func makeSpookyNoise1() -> String {
-        return "Brains...1"
-    }
-    
-    final class func makeSpookyNoise2() -> String {
-        return "Brains...2"
     }
     
     override func terrorizeTown() {
@@ -53,11 +41,4 @@ class Zombie: Monster {
     }
     
     private(set) var isFallingApart = false
-    
-    final override func terrorizeTown1() {
-        if !isFallingApart {
-            town?.changePopulation(by: -10)
-        }
-        super.terrorizeTown1()
-    }
 }

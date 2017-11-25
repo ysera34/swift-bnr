@@ -14,8 +14,8 @@ var myTown1 = Town(population: 10_000, stoplights: 6)
 myTown1.printDescription()
 
 
-let fredTheZombie = Zombie()
-fredTheZombie.town = myTown
+let fredTheZombie = Zombie(town: myTown, monsterName: "Fred")
+//fredTheZombie.town = myTown
 fredTheZombie.terrorizeTown()
 fredTheZombie.terrorizeTown()
 fredTheZombie.town?.printDescription()
@@ -34,11 +34,6 @@ print("Victim pool : \(fredTheZombie.victimPool)")
 fredTheZombie.victimPool = 500
 print("Victim pool : \(fredTheZombie.victimPool); population : \(fredTheZombie.town?.population)")
 
-print(Monster.spookyNoise)
-print(Zombie.spookyNoise)
 if Zombie.isTerrifying {
     print("Run away!")
-}
-if GiantZombie.isTerrifying {
-    print("GiantZombie Generated. Run away!")
 }
