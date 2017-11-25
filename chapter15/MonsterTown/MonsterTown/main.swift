@@ -27,3 +27,9 @@ taskVampire.town = myTown
 taskVampire.terrorizeTown()
 taskVampire.town?.printDescription()
 
+let trees = Town.numberOfTrees()
+print(trees)
+let spookyNoise = Zombie.makeSpookyNoise()
+print(spookyNoise)
+let giantZombieSpookyNoise = GiantZombie.makeSpookyNoise()
+print(giantZombieSpookyNoise)

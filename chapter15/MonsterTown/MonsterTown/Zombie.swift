@@ -21,6 +21,17 @@ class Zombie: Monster {
         }
     }
     
+    class func makeSpookyNoise() -> String {
+        return "Brains..."
+    }
+    
+    static func makeSpookyNoise1() -> String {
+        return "Brains...1"
+    }
+    
+    final class func makeSpookyNoise2() -> String {
+        return "Brains...2"
+    }
     
     override func terrorizeTown() {
 //        if let population = town?.population, population > 10 {
