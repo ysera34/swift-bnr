@@ -14,11 +14,14 @@ var myTown1 = Town(population: 10_000, stoplights: 6)
 myTown1.printDescription()
 
 
-let fredTheZombie = Zombie(town: myTown, monsterName: "Fred")
+let fredTheZombie = Zombie(
+    limp: false, fallingApart: false, town: myTown, monsterName: "Fred")
 //fredTheZombie.town = myTown
 fredTheZombie.terrorizeTown()
 fredTheZombie.terrorizeTown()
 fredTheZombie.town?.printDescription()
+
+var convenientZombie = Zombie(limp: true, fallingApart: false)
 
 let myTownSize = myTown.townSize
 print(myTownSize)

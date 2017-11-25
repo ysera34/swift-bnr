@@ -9,17 +9,23 @@
 import Foundation
 
 class Zombie: Monster {
-    var walksWithLimp = true
-//    do not work
-//    var name = "Zombie"
-//    override var name: String {
-//        get {
-//            return "Zombie"
-//        }
-//        set {
-//            
-//        }
-//    }
+    var walksWithLimp: Bool
+    private(set) var isFallingApart: Bool
+    init(limp: Bool, fallingApart: Bool, town: Town?, monsterName: String) {
+        walksWithLimp = limp
+        isFallingApart = fallingApart
+        super.init(town: town, monsterName: monsterName)
+    }
+    convenience init(limp: Bool, fallingApart: Bool) {
+        self.init(limp: limp, fallingApart: fallingApart, town: nil, monsterName: "Fred")
+        if walksWithLimp {
+            print("The zombie has a bad knee.")
+        }
+    }
+
+    override class var spookyNoise: String {
+        return "Brains..."
+    }
     
     class func makeSpookyNoise() -> String {
         return "Brains..."
@@ -39,6 +45,4 @@ class Zombie: Monster {
             return
         }
     }
-    
-    private(set) var isFallingApart = false
 }

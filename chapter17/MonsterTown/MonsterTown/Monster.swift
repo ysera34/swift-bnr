@@ -25,6 +25,10 @@ class Monster {
         name = monsterName
     }
     
+    class var spookyNoise: String {
+        return "Grrr..."
+    }
+    
     func terrorizeTown() {
         if town != nil {
             print("\(name) is terrorizing a town!")
