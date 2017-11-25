@@ -13,11 +13,17 @@ var myTown = Town()
 //myTown.changePopulation(by: 500)
 //myTown.printDescription()
 
-let genericMonster = Monster()
-genericMonster.town = myTown
-genericMonster.terrorizeTown()
+//let genericMonster = Monster()
+//genericMonster.town = myTown
+//genericMonster.terrorizeTown()
+//
+//let fredTheZombie = Zombie()
+//fredTheZombie.town = myTown
+//fredTheZombie.terrorizeTown()
+//fredTheZombie.town?.printDescription()
 
-let fredTheZombie = Zombie()
-fredTheZombie.town = myTown
-fredTheZombie.terrorizeTown()
-fredTheZombie.town?.printDescription()
+let taskVampire = Vampire()
+taskVampire.town = myTown
+taskVampire.terrorizeTown()
+taskVampire.town?.printDescription()
+

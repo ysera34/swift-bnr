@@ -11,6 +11,7 @@
 		676C680F1FC3435D003549AC /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676C680E1FC3435D003549AC /* Town.swift */; };
 		677DE4CA1FC46233003E76EE /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677DE4C91FC46233003E76EE /* Monster.swift */; };
 		677DE4CC1FC6F214003E76EE /* Zombie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677DE4CB1FC6F214003E76EE /* Zombie.swift */; };
+		677DE4CE1FC920D4003E76EE /* Vampire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677DE4CD1FC920D4003E76EE /* Vampire.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		676C680E1FC3435D003549AC /* Town.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
 		677DE4C91FC46233003E76EE /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		677DE4CB1FC6F214003E76EE /* Zombie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zombie.swift; sourceTree = "<group>"; };
+		677DE4CD1FC920D4003E76EE /* Vampire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vampire.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			children = (
 				676C68071FC33DA8003549AC /* main.swift */,
 				677DE4CB1FC6F214003E76EE /* Zombie.swift */,
+				677DE4CD1FC920D4003E76EE /* Vampire.swift */,
 				676C680E1FC3435D003549AC /* Town.swift */,
 				677DE4C91FC46233003E76EE /* Monster.swift */,
 			);
@@ -132,6 +135,7 @@
 				676C68081FC33DA8003549AC /* main.swift in Sources */,
 				677DE4CC1FC6F214003E76EE /* Zombie.swift in Sources */,
 				677DE4CA1FC46233003E76EE /* Monster.swift in Sources */,
+				677DE4CE1FC920D4003E76EE /* Vampire.swift in Sources */,
 				676C680F1FC3435D003549AC /* Town.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
