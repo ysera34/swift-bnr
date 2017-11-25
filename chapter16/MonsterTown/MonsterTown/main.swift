@@ -17,10 +17,10 @@ var myTown = Town()
 //genericMonster.town = myTown
 //genericMonster.terrorizeTown()
 //
-//let fredTheZombie = Zombie()
-//fredTheZombie.town = myTown
-//fredTheZombie.terrorizeTown()
-//fredTheZombie.town?.printDescription()
+let fredTheZombie = Zombie()
+fredTheZombie.town = myTown
+fredTheZombie.terrorizeTown()
+fredTheZombie.town?.printDescription()
 
 //let taskVampire = Vampire()
 //taskVampire.town = myTown
@@ -38,3 +38,12 @@ let myTownSize = myTown.townSize
 print(myTownSize)
 myTown.changePopulation(by: 1_000_000)
 print("Size: \(myTown.townSize); population: \(myTown.population)")
+
+let myTownSize1 = myTown.townSize1
+print(myTownSize1)
+myTown.changePopulation(by: 1_000_000)
+print("Size: \(myTown.townSize1); population: \(myTown.population)")
+
+print("Victim pool : \(fredTheZombie.victimPool)")
+fredTheZombie.victimPool = 500
+print("Victim pool : \(fredTheZombie.victimPool); population : \(fredTheZombie.town?.population)")
