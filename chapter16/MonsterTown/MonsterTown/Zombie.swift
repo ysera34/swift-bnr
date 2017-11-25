@@ -21,6 +21,10 @@ class Zombie: Monster {
         }
     }
     
+    override class var spookyNoise: String {
+        return "Brains..."
+    }
+    
     class func makeSpookyNoise() -> String {
         return "Brains..."
     }

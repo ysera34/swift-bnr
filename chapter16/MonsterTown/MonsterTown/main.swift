@@ -47,3 +47,13 @@ print("Size: \(myTown.townSize1); population: \(myTown.population)")
 print("Victim pool : \(fredTheZombie.victimPool)")
 fredTheZombie.victimPool = 500
 print("Victim pool : \(fredTheZombie.victimPool); population : \(fredTheZombie.town?.population)")
+
+print(Monster.spookyNoise)
+print(Zombie.spookyNoise)
+if Zombie.isTerrifying {
+    print("Run away!")
+}
+if GiantZombie.isTerrifying {
+    print("GiantZombie Generated. Run away!")
+}
+

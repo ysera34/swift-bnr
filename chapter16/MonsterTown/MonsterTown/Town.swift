@@ -9,7 +9,7 @@
 import Foundation
 
 struct Town {
-    let region = "South"
+    static let region = "South"
     var population = 19 {
         willSet(newPopulation) {
             print("The population will change to \(newPopulation) from \(population)")

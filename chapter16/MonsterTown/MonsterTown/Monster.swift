@@ -9,6 +9,7 @@
 import Foundation
 
 class Monster {
+    static let isTerrifying = true
     var town: Town?
     var name = "Monster"
     var victimPool: Int {
@@ -18,6 +19,10 @@ class Monster {
         set(newVictimPool) {
             town?.population = newVictimPool
         }
+    }
+    
+    class var spookyNoise: String {
+        return "Grrr..."
     }
     
     func terrorizeTown() {
