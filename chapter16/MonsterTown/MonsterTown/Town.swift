@@ -10,15 +10,19 @@ import Foundation
 
 struct Town {
     static let region = "South"
-    var population = 19 {
+    var population = 119 {
         willSet(newPopulation) {
             print("The population will change to \(newPopulation) from \(population)")
         }
         didSet(oldPopulation) {
             print("The population has changed to \(population) from \(oldPopulation)")
+            if population < oldPopulation {
+                major.makeSpeech()
+            }
         }
     }
     var numberOfStoplights = 4
+    var major = Mayor()
     
     enum Size {
         case small

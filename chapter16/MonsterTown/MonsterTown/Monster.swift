@@ -28,6 +28,7 @@ class Monster {
     func terrorizeTown() {
         if town != nil {
             print("\(name) is terrorizing a town!")
+            town?.major.notifiedTerrorizeTown()
         } else {
             print("\(name) hasn't found a town to terrorize yet...")
         }

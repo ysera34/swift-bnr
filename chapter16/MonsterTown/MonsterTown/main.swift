@@ -20,6 +20,7 @@ var myTown = Town()
 let fredTheZombie = Zombie()
 fredTheZombie.town = myTown
 fredTheZombie.terrorizeTown()
+fredTheZombie.terrorizeTown()
 fredTheZombie.town?.printDescription()
 
 //let taskVampire = Vampire()
@@ -56,4 +57,3 @@ if Zombie.isTerrifying {
 if GiantZombie.isTerrifying {
     print("GiantZombie Generated. Run away!")
 }
-
