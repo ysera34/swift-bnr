@@ -32,4 +32,12 @@ class Monster {
             print("\(name) hasn't found a town to terrorize yet...")
         }
     }
+    
+    func terrorizeTown1() {
+        if town != nil {
+            print("\(name) is terrorizing a town!")
+        } else {
+            print("\(name) hasn't found a town to terrorize yet...")
+        }
+    }
 }

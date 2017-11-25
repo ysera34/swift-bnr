@@ -51,4 +51,13 @@ class Zombie: Monster {
             return
         }
     }
+    
+    private(set) var isFallingApart = false
+    
+    final override func terrorizeTown1() {
+        if !isFallingApart {
+            town?.changePopulation(by: -10)
+        }
+        super.terrorizeTown1()
+    }
 }
