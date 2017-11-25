@@ -8,32 +8,17 @@
 
 import Foundation
 
-var myTown = Town()
-//myTown.printDescription()
-//myTown.changePopulation(by: 500)
-//myTown.printDescription()
+var myTown = Town(region: "West", population: 10_000, stoplights: 6)
+myTown.printDescription()
+var myTown1 = Town(population: 10_000, stoplights: 6)
+myTown1.printDescription()
 
-//let genericMonster = Monster()
-//genericMonster.town = myTown
-//genericMonster.terrorizeTown()
-//
+
 let fredTheZombie = Zombie()
 fredTheZombie.town = myTown
 fredTheZombie.terrorizeTown()
 fredTheZombie.terrorizeTown()
 fredTheZombie.town?.printDescription()
-
-//let taskVampire = Vampire()
-//taskVampire.town = myTown
-//taskVampire.terrorizeTown()
-//taskVampire.town?.printDescription()
-
-//let trees = Town.numberOfTrees()
-//print(trees)
-//let spookyNoise = Zombie.makeSpookyNoise()
-//print(spookyNoise)
-//let giantZombieSpookyNoise = GiantZombie.makeSpookyNoise()
-//print(giantZombieSpookyNoise)
 
 let myTownSize = myTown.townSize
 print(myTownSize)
