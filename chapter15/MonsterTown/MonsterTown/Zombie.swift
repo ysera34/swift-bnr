@@ -10,9 +10,30 @@ import Foundation
 
 class Zombie: Monster {
     var walksWithLimp = true
+//    do not work
+//    var name = "Zombie"
+    override var name: String {
+        get {
+            return "Zombie"
+        }
+        set {
+            
+        }
+    }
+    
     
     override func terrorizeTown() {
-        town?.changePopulation(by: -10)
-        super.terrorizeTown()
+//        if let population = town?.population, population > 10 {
+//            town?.changePopulation(by: -10)
+//            super.terrorizeTown()
+//        } else {
+//            print("The population in the village is very small.")
+//        }
+        
+        guard let population = town?.population, population < 10 else {
+            town?.changePopulation(by: -10)
+            super.terrorizeTown()
+            return
+        }
     }
 }
