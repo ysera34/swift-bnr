@@ -22,6 +22,15 @@ class Zombie: Monster {
             print("The zombie has a bad knee.")
         }
     }
+    required init(town: Town?, monsterName: String) {
+        walksWithLimp = false
+        isFallingApart = false
+        super.init(town: town, monsterName: monsterName)
+    }
+    
+    deinit {
+        print("Zombie named \(name) is no longer with us.")
+    }
 
     override class var spookyNoise: String {
         return "Brains..."

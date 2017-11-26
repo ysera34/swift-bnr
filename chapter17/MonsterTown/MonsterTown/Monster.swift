@@ -20,7 +20,7 @@ class Monster {
             town?.population = newVictimPool
         }
     }
-    init(town: Town?, monsterName: String) {
+    required init(town: Town?, monsterName: String) {
         self.town = town
         name = monsterName
     }
