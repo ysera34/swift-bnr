@@ -11,7 +11,7 @@ import Foundation
 class Monster {
     static let isTerrifying = true
     var town: Town?
-    var name: String
+    var name: String?
     var victimPool: Int {
         get {
             return town?.population ?? 0
@@ -20,7 +20,10 @@ class Monster {
             town?.population = newVictimPool
         }
     }
-    required init(town: Town?, monsterName: String) {
+    required init?(town: Town?, monsterName: String) {
+        if monsterName.isEmpty {
+            return nil
+        }
         self.town = town
         name = monsterName
     }
@@ -30,10 +33,10 @@ class Monster {
     }
     
     func terrorizeTown() {
-        if town != nil {
+        if town != nil, let name = name {
             print("\(name) is terrorizing a town!")
         } else {
-            print("\(name) hasn't found a town to terrorize yet...")
+            print("There is no town or there is no zombie name.")
         }
     }
 }
