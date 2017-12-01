@@ -19,3 +19,13 @@ let anotherHecate = hecate
 anotherHecate.name = "AnotherHecate"
 anotherHecate.name
 hecate.name
+
+struct Pantheon {
+    var chiefGod: GreekGod
+}
+
+let pantheon = Pantheon(chiefGod: hecate) // memberwise initializer
+let zeus = GreekGod(name: "Zeus")
+//pantheon.chiefGod = zeus // Cannot assign to property: 'pantheon' is a 'let' constant
+zeus.name = "Zeus Jr."
+zeus.name
