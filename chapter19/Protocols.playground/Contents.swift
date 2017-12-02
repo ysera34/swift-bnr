@@ -45,7 +45,7 @@ protocol TabularDataSource {
     func itemFor(row: Int, column: Int) -> String
 }
 
-struct Department: TabularDataSource {
+struct Department: TabularDataSource, CustomStringConvertible {
     let name: String
     var people = [Person]()
     
@@ -83,6 +83,10 @@ struct Department: TabularDataSource {
         default: fatalError("Invalid column!")
         }
     }
+    
+    var description: String {
+        return "Dapartment (\(name))"
+    }
 }
 
 func printTable(_ dataSource: TabularDataSource) {
@@ -117,3 +121,4 @@ department.add(Person(name: "Joe", age: 30, yearsOfExperience: 6))
 department.add(Person(name: "Karan", age: 40, yearsOfExperience: 18))
 department.add(Person(name: "Fred", age: 50, yearsOfExperience: 20))
 printTable(department)
+print(department)
