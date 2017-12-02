@@ -11,7 +11,7 @@ func printTable(_ data: [[String]], withColumnLables columnLabels: String...) {
         columnWidths.append(columnLabel.characters.count)
     }
     print(firstRow)
-    
+
     for row in data {
         var out = "|"
         for (j, item) in row.enumerated() {
@@ -37,7 +37,7 @@ struct Person {
     let yearsOfExperience: Int
 }
 
-protocol TabularDataSource: CustomStringConvertible {
+protocol TabularDataSource {
     var numberOfRows: Int { get }
     var numberOfColumns: Int { get }
     
@@ -45,7 +45,11 @@ protocol TabularDataSource: CustomStringConvertible {
     func itemFor(row: Int, column: Int) -> String
 }
 
-struct Department: TabularDataSource {
+protocol PrintableTabularDataSource: TabularDataSource, CustomStringConvertible {
+    
+}
+
+struct Department: PrintableTabularDataSource {
     let name: String
     var people = [Person]()
     
@@ -89,8 +93,8 @@ struct Department: TabularDataSource {
     }
 }
 
-func printTable(_ dataSource: TabularDataSource) {
-    print(department)
+func printTable(_ dataSource: TabularDataSource & CustomStringConvertible) {
+//    print(department)
     print("Tabel: \(dataSource.description)")
     var firstRow = "|"
     var columnWidths = [Int]()
