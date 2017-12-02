@@ -93,28 +93,46 @@ struct Department: PrintableTabularDataSource {
     }
 }
 
+func computeWidths(for dataSource: TabularDataSource) -> [Int] {
+    var columnWidths = [Int]()
+    
+    for i in 0 ..< dataSource.numberOfColumns {
+        let columnLabel = dataSource.label(forColumn: i)
+        columnWidths.append(columnLabel.characters.count)
+    }
+    
+    for i in 0 ..< dataSource.numberOfRows {
+        for j in 0 ..< dataSource.numberOfColumns {
+            let item = dataSource.itemFor(row: i, column: j)
+            if columnWidths[j] < item.characters.count {
+                columnWidths[j] = item.characters.count
+            }
+        }
+    }
+    return columnWidths
+}
+
 func printTable(_ dataSource: TabularDataSource & CustomStringConvertible) {
-//    print(department)
     print("Tabel: \(dataSource.description)")
     var firstRow = "|"
-    var columnWidths = [Int]()
-//    for columnLabel in columnLabels {
+    var columnWidths = computeWidths(for: dataSource)
     for i in 0..<dataSource.numberOfColumns {
         let columnLabel = dataSource.label(forColumn: i)
-        let columnHeader = " \(columnLabel) |"
+        let paddingNeeded = columnWidths[i] - columnLabel.characters.count
+        let padding = repeatElement(" ", count: paddingNeeded).joined()
+        let columnHeader = " \(padding)\(columnLabel) |"
         firstRow += columnHeader
-        columnWidths.append(columnLabel.characters.count)
     }
     print(firstRow)
     
-//    for row in data {
     for i in 0..<dataSource.numberOfRows {
         var out = "|"
-        
-//        for (j, item) in row.enumerated() {
         for j in 0..<dataSource.numberOfColumns {
             let item = dataSource.itemFor(row: i, column: j)
-            let paddingNeeded = columnWidths[j] - item.characters.count
+            var paddingNeeded = columnWidths[j] - item.characters.count
+            if paddingNeeded < 0 {
+                paddingNeeded = 0
+            }
             let padding = repeatElement(" ", count: paddingNeeded).joined(separator: "")
             out += " \(padding)\(item) |"
         }
@@ -123,7 +141,7 @@ func printTable(_ dataSource: TabularDataSource & CustomStringConvertible) {
 }
 
 var department = Department(name: "Engineering")
-department.add(Person(name: "Joe", age: 30, yearsOfExperience: 6))
+department.add(Person(name: "Joe", age: 1000, yearsOfExperience: 6))
 department.add(Person(name: "Karan", age: 40, yearsOfExperience: 18))
 department.add(Person(name: "Fred", age: 50, yearsOfExperience: 20))
 printTable(department)
