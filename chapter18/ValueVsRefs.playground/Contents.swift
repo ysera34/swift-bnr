@@ -21,11 +21,17 @@ anotherHecate.name
 hecate.name
 
 struct Pantheon {
-    var chiefGod: GreekGod
+    var chiefGod: GreekGod // reference type
 }
 
 let pantheon = Pantheon(chiefGod: hecate) // memberwise initializer
-let zeus = GreekGod(name: "Zeus")
+let zeus = GreekGod(name: "Zeus") // reference tpye
 //pantheon.chiefGod = zeus // Cannot assign to property: 'pantheon' is a 'let' constant
 zeus.name = "Zeus Jr."
 zeus.name
+
+pantheon.chiefGod.name // AnotherHecate
+let greekPantheon = pantheon
+hecate.name = "Trivia"
+greekPantheon.chiefGod.name
+pantheon.chiefGod.name
