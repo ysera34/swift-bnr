@@ -145,3 +145,60 @@ department.add(Person(name: "Joe", age: 1000, yearsOfExperience: 6))
 department.add(Person(name: "Karan", age: 40, yearsOfExperience: 18))
 department.add(Person(name: "Fred", age: 50, yearsOfExperience: 20))
 printTable(department)
+
+struct Book {
+    var title: String
+    var author: String
+    var rating: Double
+}
+
+struct BookCollection: PrintableTabularDataSource {
+    let name: String
+    var books = [Book]()
+    var numberOfRows: Int {
+        return books.count
+    }
+    var numberOfColumns: Int {
+        return 3
+    }
+    var description: String {
+        return "Book Collection (\(name))"
+    }
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    mutating func add(_ book: Book) {
+        books.append(book)
+    }
+    
+    func label(forColumn column: Int) -> String {
+        switch column {
+        case 0: return "Title"
+        case 1: return "Author"
+        case 2: return "Rating"
+        default: fatalError("Invalid column!")
+        }
+    }
+    
+    func itemFor(row: Int, column: Int) -> String {
+        let book = books[row]
+        switch column {
+        case 0: return book.title
+        case 1: return book.author
+        case 2: return String(book.rating)
+        default: fatalError("Invalid column!")
+        }
+    }
+}
+
+var bookCollection = BookCollection(name: "Harry Potter Series")
+bookCollection.add(Book(title: "Harry Potter and the Sorcerer's Stone", author: "J. K. Rowling", rating: 4.5))
+bookCollection.add(Book(title: "Harry Potter and the Chamber of Secrets", author: "J. K. Rowling", rating: 4.2))
+bookCollection.add(Book(title: "Harry Potter and the Prisoner of Azkaban", author: "J. K. Rowling", rating: 4.7))
+bookCollection.add(Book(title: "Harry Potter and the Goblet of Fire", author: "J. K. Rowling", rating: 5.0))
+bookCollection.add(Book(title: "Harry Potter and the Order of the Pheonix", author: "J. K. Rowling", rating: 3.5))
+bookCollection.add(Book(title: "Harry Potter and the Half Blood Prince", author: "J. K. Rowling", rating: 4.75))
+bookCollection.add(Book(title: "Harry Potter and the Deathly Hollows", author: "J. K. Rowling", rating: 4.95))
+printTable(bookCollection)
