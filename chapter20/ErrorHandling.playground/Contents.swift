@@ -130,6 +130,10 @@ func evaluate(_ input: String) {
         
         let parser = Parser(tokens: tokens)
         let result = try parser.parse()
+//        guard let tokens = try? lexer.let() else {
+//            print("Lexing failed, but I don't know why")
+//            return
+//        }
         print("Parser output: \(result)")
     } catch Lexer.Error.invalidCharacter(let character) {
         print("Input contained an invalid character: \(character)")
