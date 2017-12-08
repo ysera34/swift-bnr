@@ -5,6 +5,7 @@ import Cocoa
 enum Token {
     case number(Int)
     case plus
+    case minus
 }
 
 class Lexer {
@@ -58,6 +59,9 @@ class Lexer {
             case "+":
                 tokens.append(.plus)
                 advance()
+            case "-":
+                tokens.append(.minus)
+                advance()
             case " ":
                 advance()
             default:
@@ -99,7 +103,7 @@ class Parser {
         switch token {
         case .number(let value):
             return value
-        case .plus:
+        case .plus, .minus:
             throw Parser.Error.invalidToken(token)
         }
     }
@@ -112,7 +116,9 @@ class Parser {
             case .plus:
                 let nextNumber = try getNumber()
                 value += nextNumber
-                
+            case .minus:
+                let nextNumber = try getNumber()
+                value -= nextNumber
             case .number:
                 throw Parser.Error.invalidToken(token)
             }
