@@ -2,8 +2,19 @@
 
 import Cocoa
 
+struct StackIterator<T>: IteratorProtocol {
+//    typealias Element = T
+    
+    var stack: Stack<T>
+    
+//    mutating func next() -> Element? {
+    mutating func next() -> T? {
+        return stack.pop()
+    }
+}
+
 //struct Stack {
-struct Stack<Element> {
+struct Stack<Element>: Sequence {
 //    var items = [Int]()
     var items = [Element]()
     
@@ -26,6 +37,10 @@ struct Stack<Element> {
             mappedItems.append(f(item))
         }
         return Stack<U>(items: mappedItems)
+    }
+    
+    func makeIterator() -> StackIterator<Element> {
+        return StackIterator(stack: self)
     }
 }
 //var intStack = Stack()
@@ -79,3 +94,18 @@ func checkIfDescriptionsMatch<T: CustomStringConvertible, U: CustomStringConvert
 print(checkIfDescriptionsMatch(Int(1), Int(1)))
 print(checkIfDescriptionsMatch(1, 1.0))
 print(checkIfDescriptionsMatch(Float(1), Double(1)))
+
+
+var myStack = Stack<Int>()
+myStack.push(10)
+myStack.push(20)
+myStack.push(30)
+
+var myStackIterator = StackIterator(stack: myStack)
+while let value = myStackIterator.next() {
+    print("got \(value)")
+}
+
+for value in myStack {
+    print("for-in loop: got \(value)")
+}
