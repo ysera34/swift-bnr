@@ -40,3 +40,31 @@ extension Car {
     }
 }
 var car = Car(make: "Ford", model: "Fusion", year: 2013)
+
+extension Car {
+    enum Kind {
+        case coupe, sedan
+    }
+    var kind: Kind {
+        if numberOfDoors == 2 {
+            return .coupe
+        } else {
+            return .sedan
+        }
+    }
+}
+car.kind
+
+extension Car {
+    mutating func emptyGas(by amount: Double) {
+        precondition(amount <= 1 && amount > 0, "Amount to remove must be between 0 and 1")
+        gasLevel -= amount
+    }
+    mutating func fillGas() {
+        gasLevel = 1.0
+    }
+}
+car.emptyGas(by: 0.3)
+car.gasLevel
+car.fillGas()
+car.gasLevel
