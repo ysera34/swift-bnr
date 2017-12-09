@@ -19,6 +19,14 @@ struct Stack<Element> {
         }
         return items.removeLast()
     }
+    
+    func map<U>(_ f: (Element) -> U) -> Stack<U> {
+        var mappedItems = [U]()
+        for item in items {
+            mappedItems.append(f(item))
+        }
+        return Stack<U>(items: mappedItems)
+    }
 }
 //var intStack = Stack()
 var intStack = Stack<Int>()
@@ -36,3 +44,20 @@ stringStack.push("another string")
 print(stringStack.pop())
 print(stringStack.pop())
 print(stringStack.pop())
+
+var doubledStack = intStack.map { 2 * $0 }
+print(doubledStack.pop())
+print(doubledStack.pop())
+
+func myMap<T, U>(_ items: [T], _ f: (T) -> (U)) -> [U] {
+    var result = [U]()
+    for item in items {
+        result.append(f(item))
+    }
+    return result
+}
+
+let strings = ["one", "two", "three"]
+let stringLengths = myMap(strings) { $0.characters.count }
+// T: String, U: Int
+print(stringLengths)
