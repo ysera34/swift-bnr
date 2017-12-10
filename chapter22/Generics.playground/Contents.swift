@@ -50,6 +50,16 @@ struct Stack<Element>: Sequence {
             self.push(item)
         }
     }
+    
+    func filter(_ f: (Element) -> Bool) -> Stack<Element> {
+        var filteredItems = Stack<Element>()
+        for item in items {
+            if f(item) == true {
+                filteredItems.push(item)
+            }
+        }
+        return filteredItems
+    }
 }
 //var intStack = Stack()
 var intStack = Stack<Int>()
@@ -123,10 +133,27 @@ for value in myStack {
     print("after pushing: got \(value)")
 }
 
-
 var myOtherStack = Stack<Int>()
 myOtherStack.pushAll([1, 2, 3])
 myStack.pushAll(myOtherStack)
 for value in myStack {
     print("after pushing items onto stack, got \(value)")
 }
+
+var filteredStack = myStack.filter{$0 == 1}
+for value in filteredStack {
+    print("filtered stack value: \(value)")
+}
+
+func findAll<T: Equatable>(_ array: [T], _ elementToFind: T) -> [Int] {
+    var positions = [Int]()
+    for (index, item) in array.enumerated() {
+        if item == elementToFind {
+            positions.append(index)
+        }
+    }
+    return positions
+}
+
+findAll([5, 3, 7, 3, 9], 3)
+findAll(["hey", "what", "thats", "what", "hey"], "hey")
