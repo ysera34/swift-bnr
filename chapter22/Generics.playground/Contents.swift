@@ -157,3 +157,18 @@ func findAll<T: Equatable>(_ array: [T], _ elementToFind: T) -> [Int] {
 
 findAll([5, 3, 7, 3, 9], 3)
 findAll(["hey", "what", "thats", "what", "hey"], "hey")
+
+func findAll<T: Equatable, C: Collection>(_ elements: C, compare: T) -> [C.Index]? where C.Iterator.Element == T {
+    var resultArray = Array<C.Index>()
+    var index = elements.startIndex
+    
+    for element in elements {
+        if element == compare {
+            resultArray.append(index)
+        }
+        index = elements.index(after: index)
+    }
+    return resultArray
+}
+
+findAll(["hey", "what", "thats", "what", "hey"], compare: "hey")
