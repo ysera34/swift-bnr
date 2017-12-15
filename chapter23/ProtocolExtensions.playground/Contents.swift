@@ -2,10 +2,16 @@
 
 import Cocoa
 
-protocol Exercise {
+protocol Exercise: CustomStringConvertible {
     var name: String { get }
     var caloriesBurned: Double { get }
     var minutes: Double { get }
+}
+
+extension Exercise {
+    var description: String {
+        return "Exercise(\(name), burned \(caloriesBurned) calories in \(minutes) minutes"
+    }
 }
 
 struct EllipticalWorkout: Exercise {
@@ -53,3 +59,7 @@ extension Sequence where Iterator.Element == Exercise {
 
 let mondayWorkout: [Exercise] = [ellipticalWorkout, treadmillWorkout]
 print(mondayWorkout.totalCaloriesBurned())
+
+
+print(ellipticalWorkout)
+print(treadmillWorkout)
