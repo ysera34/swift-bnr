@@ -39,3 +39,17 @@ extension Exercise {
 
 print(ellipticalWorkout.caloriesBurnedPerMinute)
 print(treadmillWorkout.caloriesBurnedPerMinute)
+
+
+extension Sequence where Iterator.Element == Exercise {
+    func totalCaloriesBurned() -> Double {
+        var total: Double = 0
+        for exercise in self {
+            total += exercise.caloriesBurned
+        }
+        return total
+    }
+}
+
+let mondayWorkout: [Exercise] = [ellipticalWorkout, treadmillWorkout]
+print(mondayWorkout.totalCaloriesBurned())
