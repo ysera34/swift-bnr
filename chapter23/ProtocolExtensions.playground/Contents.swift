@@ -14,8 +14,15 @@ extension Exercise {
     }
 }
 
+extension Exercise {
+    var title: String {
+        return "\(name) - \(minutes) minutes"
+    }
+}
+
 struct EllipticalWorkout: Exercise {
     let name = "Elliptical Workout"
+    let title = "Workout using the Go Fast Elliptical Trainer 3000"
     let caloriesBurned: Double
     let minutes: Double
 }
@@ -69,3 +76,11 @@ print(mondayWorkout.totalCaloriesBurned())
 
 print(ellipticalWorkout)
 print(treadmillWorkout)
+
+
+for exercise in mondayWorkout {
+    print(exercise.title)
+}
+
+print(ellipticalWorkout.title)
+
