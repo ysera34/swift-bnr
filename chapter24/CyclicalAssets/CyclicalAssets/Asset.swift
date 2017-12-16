@@ -11,6 +11,7 @@ import Foundation
 class Asset: CustomStringConvertible {
     let name: String
     let value: Double
+    var assetSize: Int
     weak var owner: Person?
     
     var description: String {
@@ -24,6 +25,7 @@ class Asset: CustomStringConvertible {
     init(name: String, value: Double) {
         self.name = name
         self.value = value
+        self.assetSize = 0
     }
     
     deinit {

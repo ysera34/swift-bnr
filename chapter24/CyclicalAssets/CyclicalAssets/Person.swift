@@ -35,9 +35,22 @@ class Person: CustomStringConvertible {
     func takeOwnership(of asset: Asset) {
 //        asset.owner = self
 //        assets.append(asset)
+        guard asset.owner == nil else {
+            print("This asset is already owned by \(asset.owner?.name).")
+            return
+        }
         accountant.gained(asset) {
             asset.owner = self
             assets.append(asset)
+            asset.assetSize = assets.endIndex
+        }
+    }
+    
+    func removeOwnerShip(of asset: Asset) {
+        accountant.lost(asset) {
+            asset.owner = nil
+            assets.remove(at: asset.assetSize - 1)
+            asset.assetSize = assets.endIndex
         }
     }
     

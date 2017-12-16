@@ -22,4 +22,9 @@ class Accountant {
         netWorth += asset.value
         completion()
     }
+    
+    func lost(_ asset: Asset, completion: () -> Void) {
+        netWorth -= asset.value
+        completion()
+    }
 }

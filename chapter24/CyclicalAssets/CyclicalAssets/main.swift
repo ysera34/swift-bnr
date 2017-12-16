@@ -21,6 +21,12 @@ bob?.useNetWorthChangeHandler {
 }
 bob?.takeOwnership(of: laptop!)
 bob?.takeOwnership(of: hat!)
+bob?.removeOwnerShip(of: hat!)
+
+var paul: Person? = Person(name: "Paul")
+print("created \(paul)")
+
+paul?.takeOwnership(of: laptop!)
 
 print("While Bob is alive, hat's owner is \(hat!.owner)")
 bob = nil
