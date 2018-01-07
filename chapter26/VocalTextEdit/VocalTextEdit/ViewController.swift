@@ -21,16 +21,33 @@ class ViewController: NSViewController {
 //         Update the view, if already loaded.
 //        }
 //    }
+    
+    let speechSynthesizer = NSSpeechSynthesizer()
 
     @IBOutlet var textView: NSTextView!
     
+    var contents: String? {
+        get {
+            return textView.string
+        }
+        set {
+            textView.string = newValue!
+        }
+    }
+    
     @IBAction func speakButtonClicked(_ sender: NSButton) {
 //        print("The Speak button was clicked")
-        print("I Should speak \(textView.string)")
+//        print("I Should speak \(textView.string)")
+        if let contents = textView, !contents.string.isEmpty {
+            speechSynthesizer.startSpeaking(contents.string)
+        } else {
+            speechSynthesizer.startSpeaking("The document is empty.")
+        }
     }
     
     @IBAction func stopButtonClicked(_ sender: NSButton) {
-        print("The Stop button was clicked")
+//        print("The Stop button was clicked")
+        speechSynthesizer.stopSpeaking()
     }
 
 }
